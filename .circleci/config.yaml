@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  greetings:
+  greet:
      docker: 
        - image: cimg/base:stable
      steps:
@@ -10,4 +10,4 @@ jobs:
 workflows:
   hello:
     jobs:
-      - greetings
+      - greet
