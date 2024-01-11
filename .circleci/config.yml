@@ -6,8 +6,21 @@ jobs:
        - image: cimg/base:stable
      steps:
        - run: echo "Hello Petrit"
+  meet:
+     docker: 
+       - image: cimg/base:stable
+     steps:
+       - run: echo "Welcome to my Project"
+       - run: echo "You will learn DevOps"
+       - run: echo "I hope you enjoy it"
 
 workflows:
   greet_and_meet:
     jobs:
       - greet
+      - meet:
+          requires:
+            - greet
+          filters:
+            branches:
+              only: master
